@@ -53,14 +53,14 @@
 <body>
   <header>
     <h1 class="header-title">芝麻智能工业智控</h1>
-    <span id="nowDateTimeSpan">当前时间获取中....</span>
+    <span class="time" id="nowDateTimeSpan">当前时间获取中....</span>
   </header>
   <main>
     <div class="left">
       <div class="zm-container">
         <p class="zm-title"><span>实时参数</span></p>
         <div class="zm-box">
-          <div id="echart_line" style="width: 20rem;height:20rem;"></div>
+          <div id="echart_line" style="width: 300px;height:20rem;"></div>
         </div>
       </div>
       <div class="zm-container">
@@ -118,20 +118,20 @@
        <div class="zm-container">
         <p class="zm-title"><span>仪表监控</span></p>
         <div class="zm-box">
-          <div class="content_middle" style="width: 20rem;height:20rem">
+          <div class="content_middle" style="width: 25rem;height:20rem">
             <div class="common_da">
               <a class="common btnLeft" href="javascript:;"></a>
               <a class="common btnRight" href="javascript:;"></a>
             </div>
             <ul>
               <li style="opacity: 100;filter:alpha(opacity=1);">
-                <div id="echart_gauge_oxygen" style="width: 400px;height:300px;"></div>
+                <div id="echart_gauge_oxygen" style="width: 25rem;height:20rem;"></div>
               </li>
               <li>
-                <div id="echart_gauge_temperature" style="width: 400px;height:300px"></div>
+                <div id="echart_gauge_temperature" style="width: 25rem;height:20rem;"></div>
               </li>
               <li>
-                <div id="echart_gauge_humidity" style="width: 400px;height:300px"></div>
+                <div id="echart_gauge_humidity" style="width: 25rem;height:20rem;"></div>
               </li>
             </ul>
             <div class="table">
@@ -147,38 +147,42 @@
     </div>
     <div class="center">
       <div class="zm-box">
-        <div class="fu">
-          <div class="wei">
-            <p class="dtu-online">设备故障报警数</p>
-            <div id="dtuOnline" class="num">
-              <span>正</span>
-              <span>在</span>
-              <span>加</span>
-              <span>载</span>
-              <span>中</span>
-              <span>...</span>
+        <div>
+          <div class="center-top">
+            <div class="wei">
+              <p class="dtu-online">设备故障报警数</p>
+              <div id="dtuOnline" class="num">
+                <span>正</span>
+                <span>在</span>
+                <span>加</span>
+                <span>载</span>
+                <span>中</span>
+                <span>...</span>
+              </div>
+  
             </div>
-
+            <div class="wei2">
+              <div class="zi1">
+                <div class="top-title">在线设备</div>
+                <input id="total" type="text" class="change2" value="加载中..." />
+              </div>
+              <div class="zi2">
+                <div class="top-title">故障率</div>
+                <div class="percentage" id="pie">加载中...</div>
+              </div>
+            </div>
           </div>
-          <div class="wei2">
-            <div class="zi1">
-              <div class="top-title">在线设备</div>
-              <input id="total" type="text" class="change2" value="加载中..." />
+          <div class="center-bottom">
+            <div class="wei3">
+              <div class="k8" id="echart_spie"></div>
             </div>
-            <div class="zi2">
-              <div class="top-title">故障率</div>
-              <div class="percentage" id="pie">加载中...</div>
-            </div>
-          </div>
-          <div class="wei3">
-            <div class="k8" id="echart_spie"></div>
           </div>
         </div>
-
+          
       </div>
       <div class="zm-container">
         <div class="zm-box">
-          <div id="map" style="width: 50rem;height:50rem"></div>
+          <div id="map" style="width: 50rem;height:35rem"></div>
         </div>
       </div>
       <div class="zm-container">
@@ -195,29 +199,29 @@
               <li>维护记录</li>
             </ul>
 
-            <ul class="tab-content" style="width: 50rem;height:20rem;">
+            <ul class="tab-content" style="width: 42rem;height:20rem;">
               <li>
-                <div id="tabEchart1" style="width: 50rem;height:15rem;"></div>
+                <div id="tabEchart1" style="width: 42rem;height:15rem;"></div>
               </li>
               <li>
-                <div id="tabEchart2" style="width: 50rem;height:15rem;"></div>
+                <div id="tabEchart2" style="width: 42rem;height:15rem;"></div>
               </li>
               <li>
-                <div class="tab3-pipe" style="width: 50rem;height:15rem;">
+                <div class="tab3-pipe" style="width: 42rem;height:15rem;">
                   <div id="tab3_chart01" style="width: 33%;height:15rem;"></div>
                   <div id="tab3_chart02" style="width: 33%;height:15rem;"></div>
                   <div id="tab3_chart03" style="width: 33%;height:15rem;"></div>
                 </div>
               </li>
               <li>
-                <div id="tabEchart4" style="width: 1000px;height:250px;"></div>
+                <div id="tabEchart4" style="width: 42rem;height:15rem;"></div>
               </li>
               <li class="current">
-                <div id="tabEchart5" style="width: 1000px;height:250px;"></div>
+                <div id="tabEchart5" style="width: 42rem;height:15rem;"></div>
               </li>
               <li>
-                <div id="repairService-records" style="width: 1000px;height:250px;">
-                  <div class="boxall table2" style="width: 1000px;height:300px;">
+                <div id="repairService-records" style="width: 42rem;height:15rem;">
+                  <div class="boxall table2" style="width: 42rem;height:15rem;">
                     <p class="pth2"> <span>维护时间</span> <span>维护人</span> <span>维护地点</span> <span>维护详情</span> </p>
                     <ul class="zm-wrap2">
                       <li>
@@ -296,19 +300,19 @@
       <div class="zm-container">
         <p class="zm-title"><span>设备运行</span></p>
         <div class="zm-box">
-          <div id="echart_bar" style="width: 400px;height:300px"></div>
+          <div id="echart_bar" style="width: 25rem;height:20rem"></div>
         </div>
       </div>
       <div class="zm-container">
         <p class="zm-title"><span>实时数据</span></p>
         <div class="zm-box">
-          <div id="echart_realTimeData_line" style="width: 400px;height:300px"></div>
+          <div id="echart_realTimeData_line" style="width: 25rem;height:20rem"></div>
         </div>
       </div>
       <div class="zm-container">
         <p class="zm-title"><span>多行业</span></p>
         <div class="zm-box">
-          <div id="echart_pie" style="width: 400px;height:300px"></div>
+          <div id="echart_pie" style="width: 25rem;height:20rem"></div>
         </div>
       </div>
     </div>

@@ -17,28 +17,14 @@
 html {
     // zoom:0.95;
     // height:100vw;
-    width: 1920px;
+    max-width: 1920px;
+    // min-width:80px;
     margin:0;
     font-size:16px;
     font-family:Arial, Helvetica, sans-serif;
     line-height:1.8em;
     columns: #666666;
-    // min-width:10%;
-    // min-height:10%;
-// //     position: relative;
-// //     overflow-x: hidden;
-    // overflow-y: scroll;
-    // -ms-scroll-chaining: chained;
-    // -ms-overflow-style: none;
-    // -ms-content-zooming: zoom;
-    // -ms-scroll-rails: none;
-    // -ms-content-zoom-limit-min: 100%;
-    // -ms-content-zoom-limit-max: 500%;
-    // -ms-scroll-snap-type: proximity;
-    // -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
-    // -ms-overflow-style: none;
-    // overflow: auto;
-// //     // height:1080px;
+    
 }
 
 p,
@@ -52,7 +38,7 @@ h5,
 h6,
 li,
 ul {
-    font-family: '微软雅黑';
+    font-family: Arial, Helvetica, sans-serif
 }
 
 body {
@@ -83,24 +69,33 @@ li {
 }
 
 main {
-    width: 1080px;
+    width: 100%;
     height: 80vh;
     display: flex;
     // margin-left:20rem;
-    justify-content: center;
-    // flex-grow: 1;
+    // justify-content: center;
+    flex-grow: 1;
     // margin: 10px;
 }
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 800px){
     main {
-        display: block;
+        // flex-direction: column;
+        // justify-content: center;
+        display:block;
     }
 }
 main>div {
-    margin: 10px;
+    // margin: 10px;
+    width:100%
+}
+main>div.left{
+    width:30%
+}
+main>div.right{
+    width: 30%;
 }
 main>div.center{
-    flex: 1;
+    flex:1
 }
 .zm-container {
     margin-bottom: 20px;
@@ -108,16 +103,15 @@ main>div.center{
 }
 
 header {
-    width: 1080px;
+    width: 100%;
     display: flex;
     height:20vh;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     background-image: url("../img/header.png");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position: top center;
 }
 @media(max-width:750px){
     header{
@@ -141,12 +135,12 @@ header {
 
 @shadow-color: rgb(12, 185, 185);
 
-header>span {
+header>span.time {
     color: #fff;
     position: absolute;
     display: inline-block;
-    // left: 80vw;
-    top: 15vh;
+    right: 20px;
+    top: 10vh;
     background: @shadow-color;
     box-shadow: 0 0 20px @shadow-color;
     padding: 0px 20px;
@@ -156,27 +150,27 @@ header>span {
         top: 15vh;
     }
 }
-// header>span::before { //右边
-//     content: '';
-//     position: absolute;
-//     width: 0;
-//     height: 0;
-//     border: 12px solid transparent;
-//     border-left-color: @shadow-color;
-//     left: 100%;
-//     top: 0;
-// }
+header>span::before { //右边
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-left-color: @shadow-color;
+    left: 100%;
+    top: 0;
+}
 
-// header>span::after {
-//     content: '';
-//     position: absolute;
-//     width: 0;
-//     height: 0;
-//     border: 12px solid transparent;
-//     border-right-color: @shadow-color;
-//     left: -23px;
-//     top: 0;
-// }
+header>span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-right-color: @shadow-color;
+    left: -23px;
+    top: 0;
+}
 
 .zm-title {
     position: relative;
@@ -203,6 +197,7 @@ header>span {
 .zm-title:before {
     content: '';
     position: absolute;
+    min-width: 25rem;
     margin: 0;
     top: 4px;
     left: @tab-left+14;
@@ -230,8 +225,12 @@ header>span {
 }
 
 .zm-box {
+    widows: 100%;
     margin-top: 10px;
-    padding: 5px;
+    margin:1rem;
+    padding: 1rem;
+    min-width:25rem;
+    // max-width: 25rem;
     line-height: 20px;
     display: flex;
     justify-content: center;
@@ -263,29 +262,27 @@ header>span {
     box-shadow: 0 0 20px rgba(3, 218, 196, 0.692);
 }
 
-.fu {
-    width: 710px;
-    height: 136px;
+.center-top {
+    width: 45em;
+    height: 10rem;
     margin-top: 10px;
     display: flex;
+    justify-content: space-around;
 }
-
+.center-bottom{
+    display: flex;
+    justify-content: center;
+}
 .wei {
-    // float:left;
-    width: 250px;
-    height: 136px;
+    height: 10rem;
     display: flex;
     flex-direction: column;
-    margin-left: -20px;
-    ;
 }
 
 .wei2 {
-    // float:left;
     display: flex;
-    widows: 208px;
-    height: 136px;
-    margin-left: 20px;
+    // width:50%;
+    height: 10rem;
 }
 
 .zi1 {
@@ -317,12 +314,10 @@ header>span {
 }
 
 .wei3 {
-    // float:left;
-    width: 200px;
-    height: 150px;
-    line-height: 150px;
-    margin-top: -11px;
-    // margin-bottom: 20px;
+    // width: 100%;
+    height: 10rem;
+    // line-height: 150px;
+    // margin-top: -11px;
 }
 
 .k8 {
@@ -400,15 +395,14 @@ header>span {
     left: 0%;
     margin: 0px auto;
 }
-
 .content_middle .table {
     width: 740px;
     height: 33px;
     position: absolute;
     bottom: 10px;
-    left: 94%;
+    // left: 94%;
     z-index: 9;
-    margin-left: -355px;
+    // margin-left: -355px;
     line-height: 24px;
 }
 
@@ -446,13 +440,15 @@ header>span {
 .tab-label {
     display: flex;
     position: absolute;
-    right: 10px;
+    left: 3rem;
     top: 10px;
+    padding-left: 0em;
 }
 
 .tab-label li {
     color: @tab-color;
-    padding: 10px 30px;
+    // padding: 10px 30px;
+    padding:1rem 1rem;
     position: relative;
     border-bottom: 0px solid @tab-color;
     transition: 0.2s all linear;
@@ -504,10 +500,8 @@ header>span {
     position: absolute;
     text-align: center;
     top: 50px;
-    width: 100%;
     overflow: hidden;
     padding: 0;
-    height: 300px;
     transition: 0.2s all linear;
 }
 
@@ -516,8 +510,8 @@ header>span {
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    width: 100%;
-    height: 300px;
+    // width: 100%;
+    height: 20rem;
     padding: 0;
 }
 
