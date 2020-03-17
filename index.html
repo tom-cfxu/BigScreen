@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/scroll.css">
+  <link href="img/favicon.ico" rel="SHORTCUT ICON" />
+  <title>芝麻智能工业智控</title>
+  <script>
+    //更新系统时间
+    // window.onload=startTime();
+    setInterval(startTime, 1000)
+
+    function startTime() {
+      var today = new Date(); //定义日期对象   
+      var yyyy = today.getFullYear(); //通过日期对象的getFullYear()方法返回年    
+      var MM = today.getMonth() + 1; //通过日期对象的getMonth()方法返回年    
+      var dd = today.getDate(); //通过日期对象的getDate()方法返回年     
+      var hh = today.getHours(); //通过日期对象的getHours方法返回小时   
+      var mm = today.getMinutes(); //通过日期对象的getMinutes方法返回分钟   
+      var ss = today.getSeconds(); //通过日期对象的getSeconds方法返回秒   
+      // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09   
+      MM = checkTime(MM);
+      dd = checkTime(dd);
+      mm = checkTime(mm);
+      ss = checkTime(ss);
+      var day; //用于保存星期（getDay()方法得到星期编号）
+      if (today.getDay() == 0) day = "星期日 "
+      if (today.getDay() == 1) day = "星期一 "
+      if (today.getDay() == 2) day = "星期二 "
+      if (today.getDay() == 3) day = "星期三 "
+      if (today.getDay() == 4) day = "星期四 "
+      if (today.getDay() == 5) day = "星期五 "
+      if (today.getDay() == 6) day = "星期六 "
+      document.getElementById('nowDateTimeSpan').innerHTML = yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" +
+        ss + "   " + day;
+      // setTimeout('startTime()',1000)
+    }
+
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    };
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 class="header-title">芝麻智能工业智控</h1>
+    <span id="nowDateTimeSpan">当前时间获取中....</span>
+  </header>
+  <main>
+    <div class="left">
+      <div class="zm-container">
+        <p class="zm-title"><span>实时参数</span></p>
+        <div class="zm-box">
+          <div id="echart_line" style="width: 20rem;height:20rem;"></div>
+        </div>
+      </div>
+      <div class="zm-container">
+        <p class="zm-title"><span>报警详情</span></p>
+        <div class="zm-box">
+          <div class="boxall" style="width: 25rem;height:20rem;">
+            <p class="pth"> <span>编号</span> <span>所属地</span> <span>报警类型</span> <span>报警时间</span> </p>
+            <div class="zm-wrap">
+              <li>
+                <p> <span><i>1</i></span> <span>福州</span> <span>设备故障</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>2</i></span> <span>福州</span> <span>温度过高</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>3</i></span> <span>福州</span> <span>设备故障</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>4</i></span> <span>福州</span> <span>温度过高</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>5</i></span> <span>福州</span> <span>气压过高</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>6</i></span> <span>福州</span> <span>设备故障</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>7</i></span> <span>福州</span> <span>电压过低</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>8</i></span> <span>福州</span> <span>设备故障</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>9</i></span> <span>福州</span> <span>设备故障</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>10</i></span> <span>福州</span> <span>电压过低</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>11</i></span> <span>福州</span> <span>设备故障</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>12</i></span> <span>福州</span> <span>气压过低</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>13</i></span> <span>福州</span> <span>气压过高</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+              <li>
+                <p> <span><i>14</i></span> <span>福州</span> <span>气压过低</span> <span>2019-12-18 16:23:12</span> </p>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="zm-container">
+        <p class="zm-title"><span>仪表监控</span></p>
+        <div class="zm-box">
+          <div class="content_middle" style="width: 20rem;height:20rem">
+            <div class="common_da">
+              <a class="common btnLeft" href="javascript:;"></a>
+              <a class="common btnRight" href="javascript:;"></a>
+            </div>
+            <ul>
+              <li style="opacity: 100;filter:alpha(opacity=1);">
+                <div id="echart_gauge_oxygen" style="width: 400px;height:300px;"></div>
+              </li>
+              <li>
+                <div id="echart_gauge_temperature" style="width: 400px;height:300px"></div>
+              </li>
+              <li>
+                <div id="echart_gauge_humidity" style="width: 400px;height:300px"></div>
+              </li>
+            </ul>
+            <div class="table">
+              <a class="small_active" href="javascript:;">氧气表</a>
+              <a href="javascript:;">温度表</a>
+              <a href="javascript:;">湿度表</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+    <div class="center">
+      <div class="zm-box">
+        <div class="fu">
+          <div class="wei">
+            <p class="dtu-online">设备故障报警数</p>
+            <div id="dtuOnline" class="num">
+              <span>正</span>
+              <span>在</span>
+              <span>加</span>
+              <span>载</span>
+              <span>中</span>
+              <span>...</span>
+            </div>
+
+          </div>
+          <div class="wei2">
+            <div class="zi1">
+              <div class="top-title">在线设备</div>
+              <input id="total" type="text" class="change2" value="加载中..." />
+            </div>
+            <div class="zi2">
+              <div class="top-title">故障率</div>
+              <div class="percentage" id="pie">加载中...</div>
+            </div>
+          </div>
+          <div class="wei3">
+            <div class="k8" id="echart_spie"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="zm-container">
+        <div class="zm-box">
+          <div id="map" style="width: 50rem;height:50rem"></div>
+        </div>
+      </div>
+      <div class="zm-container">
+        <div class="zm-box">
+          <div class="zmWrap">
+          </div>
+          <li class="label-switch" style="width: 50rem;height:20rem;">
+            <ul class="tab-label">
+              <li class="checked">近年趋势</li>
+              <li>实时趋势</li>
+              <li>设备占比</li>
+              <li>行业分布</li>
+              <li>故障类型</li>
+              <li>维护记录</li>
+            </ul>
+
+            <ul class="tab-content" style="width: 50rem;height:20rem;">
+              <li>
+                <div id="tabEchart1" style="width: 50rem;height:15rem;"></div>
+              </li>
+              <li>
+                <div id="tabEchart2" style="width: 50rem;height:15rem;"></div>
+              </li>
+              <li>
+                <div class="tab3-pipe" style="width: 50rem;height:15rem;">
+                  <div id="tab3_chart01" style="width: 33%;height:15rem;"></div>
+                  <div id="tab3_chart02" style="width: 33%;height:15rem;"></div>
+                  <div id="tab3_chart03" style="width: 33%;height:15rem;"></div>
+                </div>
+              </li>
+              <li>
+                <div id="tabEchart4" style="width: 1000px;height:250px;"></div>
+              </li>
+              <li class="current">
+                <div id="tabEchart5" style="width: 1000px;height:250px;"></div>
+              </li>
+              <li>
+                <div id="repairService-records" style="width: 1000px;height:250px;">
+                  <div class="boxall table2" style="width: 1000px;height:300px;">
+                    <p class="pth2"> <span>维护时间</span> <span>维护人</span> <span>维护地点</span> <span>维护详情</span> </p>
+                    <ul class="zm-wrap2">
+                      <li>
+                        <p>
+                          <span>2019-12-26</span>
+                          <span>解决方案部xxx</span>
+                          <span>福州</span>
+                          <span>Plc排查</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>2019-12-26</span>
+                          <span>解决方案部xxx</span>
+                          <span>福州</span>
+                          <span>Plc排查</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>2019-12-26</span>
+                          <span>解决方案部xxx</span>
+                          <span>福州</span>
+                          <span>Plc排查</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>2019-12-26</span>
+                          <span>解决方案部xxx</span>
+                          <span>福州</span>
+                          <span>Plc排查</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>2019-12-26</span>
+                          <span>解决方案部xxx</span>
+                          <span>福州</span>
+                          <span>Plc排查</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>2019-12-26</span>
+                          <span>解决方案部xxx</span>
+                          <span>福州</span>
+                          <span>Plc排查</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>2019-12-26</span>
+                          <span>解决方案部xxx</span>
+                          <span>福州</span>
+                          <span>Plc排查</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p>
+                          <span>2019-12-26</span>
+                          <span>解决方案部xxx</span>
+                          <span>福州</span>
+                          <span>Plc排查</span>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="right" >
+      <div class="zm-container">
+        <p class="zm-title"><span>设备运行</span></p>
+        <div class="zm-box">
+          <div id="echart_bar" style="width: 400px;height:300px"></div>
+        </div>
+      </div>
+      <div class="zm-container">
+        <p class="zm-title"><span>实时数据</span></p>
+        <div class="zm-box">
+          <div id="echart_realTimeData_line" style="width: 400px;height:300px"></div>
+        </div>
+      </div>
+      <div class="zm-container">
+        <p class="zm-title"><span>多行业</span></p>
+        <div class="zm-box">
+          <div id="echart_pie" style="width: 400px;height:300px"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="./js/jquery.3.4.1.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.liMarquee.js"></script>
+  <script type="text/javascript" src="js/echarts.min.js"></script>
+  <script type="text/javascript" src="js/china.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/map.js"></script>
+  <!-- <script type="text/javascript">
+  s = window.screen.width / 1920;
+  document.body.style.zoom = s;</script> -->
+  <script type="text/javascript">
+    //实时报警滚动
+    $(function () {
+      $('.zm-wrap').liMarquee({
+        direction: 'up', //身上滚动
+        runshort: true, //内容不足时不滚动
+        scrollamount: 20 //速度
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    //维护记录滚动
+    $(function (){
+      var li = $('.tab-label li:nth-child(6)');
+      li.onclick = repairRecords();
+
+      function repairRecords() {
+        $('.zm-wrap2').liMarquee({
+          direction: 'up', //身上滚动
+          runshort: true, //内容不足时不滚动
+          scrollamount: 20 //速度
+        });
+      }
+    })
+  </script>
+  <script type="text/javascript">
+    $(function (){ //选项卡切换
+      var li = $('.tab-label li');
+      var div = $('.tab-content div');
+      li.each(function (index) {
+        $(this).click(function () {
+          $('.tab-label li.checked').removeClass('checked') && $(this).addClass('checked'); //隐藏显示切换标签
+          $(".tab-content li:eq(" + index + ")").show().siblings().hide() //隐藏显示内容
+        })
+      })
+    })
+  </script>
+  <script  type="text/javascript">
+    $(function (){ //设备在线数量刷新
+      var online = 20;
+
+      function onlineUpdate() {
+        online += 7;
+        var str = online.toString();
+        switch (str.length) {
+          case 6:
+            str = str;
+            break;
+          case 5:
+            str = '0' + str;
+            break;
+          case 4:
+            str = '00' + str;
+            break;
+          case 3:
+            str = '000' + str;
+            break;
+          case 2:
+            str = '0000' + str;
+            break;
+          case 1:
+            str = '00000' + str;
+            break;
+          case 0:
+            str = '000000';
+            break;
+        }
+        for (var i = 0; i < str.length; i++) {
+          var span = document.querySelector(".num span:nth-child(".concat(i + 1, ")"));
+          span.innerHTML = str.substring(i, i + 1);
+        }
+      }
+      setInterval(onlineUpdate, 500)
+    })
+
+    window.onload = set_tine(); //设备总数量
+    var total = 253456;
+
+    function set_tine() {
+      setTimeout(function () {
+        total += 100;
+        document.getElementById('total').value = total;
+        set_tine();
+      }, 500)
+    }
+
+    $(function (){ //故障率
+      var pie = '76.34%';
+      var online = '';
+      var num = document.querySelector(".num");
+
+      function set_pie() {
+        online = '';
+        for (i = 0; i < num.childElementCount; i++) {
+          var span = document.querySelector(".num span:nth-child(".concat(i + 1, ")")).innerHTML;
+          online += span;
+        }
+        online = parseInt(online);
+        var span = document.querySelector(".num span:nth-child(".concat(i + 1, ")"));
+        pie = (online / total * 100).toFixed(2);
+        if (!isNaN(pie)) {
+          document.getElementById('pie').innerHTML = pie + '%'
+        } else {
+          document.getElementById('pie').innerHTML = '加载中...';
+        }
+
+      }
+      setInterval(set_pie, 500)
+      set_pie();
+    })
+  </script>
+  <script>
+    $(function (){ //仪表盘轮播
+      var aSmall = $('.content_middle .table a');
+      var aLi = $('.content_middle ul li');
+      var iNow = 0;
+      aSmall.click(function () {
+        var n = $(this).index();
+        iNow = n;
+        aLi.eq(iNow).siblings().stop().animate({
+          opacity: 0
+        }, 100);
+        aLi.eq(iNow).stop().animate({
+          opacity: 1
+        }, 100);
+        aSmall.eq(iNow).addClass('small_active').siblings().removeClass('small_active')
+      })
+    })
+  </script>
+</body>
+
+</html>
