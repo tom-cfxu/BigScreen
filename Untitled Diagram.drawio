@@ -1,1 +1,22 @@
-<mxfile host="app.diagrams.net" modified="2021-06-02T06:30:43.024Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 Edg/91.0.864.37" version="14.7.3" etag="VL49oiIdLCgvglwX9H8k" type="github"><diagram id="-Nr_-JrVeSkD6OLJ-mzc">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-06-02T06:34:04.231Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 Edg/91.0.864.37" etag="b_KWzf7QvMQhdLXxhWzH" version="14.7.3" type="github">
+  <diagram id="-Nr_-JrVeSkD6OLJ-mzc" name="Page-1">
+    <mxGraphModel dx="1382" dy="695" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FF0000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FFgZJV07c7toBTz7hAj6-1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#21C0A5;strokeColor=#006658;fontColor=#5C5C5C;rotation=-15;" vertex="1" parent="1">
+          <mxGeometry x="80" y="130" width="350" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="FFgZJV07c7toBTz7hAj6-2" value="Icon" style="icon;html=1;image=img/clipart/Gear_128x128.png;rounded=0;sketch=0;fontColor=#5C5C5C;strokeColor=#006658;fillColor=#21C0A5;" vertex="1" parent="1">
+          <mxGeometry x="524" y="80" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="FFgZJV07c7toBTz7hAj6-3" value="" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;rounded=0;sketch=0;fontColor=#5C5C5C;strokeColor=#006658;fillColor=#21C0A5;" vertex="1" parent="1">
+          <mxGeometry x="600" y="375" width="90" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="FFgZJV07c7toBTz7hAj6-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Class&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;div style=&quot;height:2px;&quot;&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;sketch=0;fontColor=#5C5C5C;strokeColor=#006658;fillColor=#21C0A5;" vertex="1" parent="1">
+          <mxGeometry x="320" y="550" width="240" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
